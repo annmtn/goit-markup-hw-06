@@ -53,7 +53,7 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Эффективные решения<br />для вашего бизнеса</h1>
-          <button class="hero-btn" type="button" data-modal-open>Заказать услугу</button>
+          <button class="hero-btn button" type="button" data-modal-open>Заказать услугу</button>
         </div>
 
         <div class="backdrop is-hidden" data-modal>
@@ -389,6 +389,17 @@
             </li>
           </ul>
         </div>
+
+        <form class="footer-form">
+          <label class="footer-form-text" for="email">Подпишитесь на рассылку</label>
+          <input class="footer-form-input" type="email" name="email" placeholder="E-mail" id="email" />
+          <button class="footer-form-btn button" type="submit">
+            Подписаться
+            <svg class="footer-form-svg">
+              <use href="./images/icons/sprite.svg#icon-send"></use>
+            </svg>
+          </button>
+        </form>
       </div>
     </footer>
 
