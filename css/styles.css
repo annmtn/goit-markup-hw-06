@@ -769,7 +769,7 @@ img {
   border-radius: 4px;
   padding-left: 42px ;
 
-  transition-property: border-color, outline;
+  transition-property: border-color;
   transition-duration: var(--duration);
   transition-timing-function: var(--timing-function);
 }
@@ -780,6 +780,7 @@ img {
 }
 
 .modal-form-textarea {
+  display: block;
   height: 120px;
   padding: 12px 16px;
   resize: none;
@@ -789,7 +790,7 @@ img {
  color: rgba(117, 117, 117, 0.5);
 }
 
-.modal-form-svg {
+.modal-form-icone {
   position: absolute;
   left: 12px;
   bottom: 11px;
@@ -801,58 +802,55 @@ img {
   transition-timing-function: var(--timing-function);
 }
 
-.modal-form-input:focus + .modal-form-svg {
+.modal-form-input:focus + .modal-form-icone {
   fill: var(--accent-color);
 }
 
 .modal-form-checkbox {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   margin-bottom: 30px;
-  outline: 1px solid red;
 }
 .checkbox-label {
-  display: block;
   line-height: 1.71;
-  margin-left: 18px;
 }
-.checkbox-link {
-  color: var(--accent-color);
-}
-.checkbox {
-  /* position: absolute;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; */
-
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden
-}
-.checkbox-icon {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-
+.checkbox-label::before {
+  content: "";
+  display: inline-block;
   width: 16px;
   height: 15px;
+
   border: 1.5px solid var(--primary-text-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
 }
 
-.checkbox:checked + .checkbox-icon {
+.checkbox-input:checked + .checkbox-label::before {
+  background-image: url(../images/icons/check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  
   background-color: var(--accent-color);
-  border: none;
+  border: var(--accent-color);
   border-radius: 2px;
+}
+
+.checkbox-input {
+  transition-property: border-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+}
+
+.checkbox-input:focus + .checkbox-label::before {
+  border-color: var(--accent-color);
+}
+
+.checkbox-input:hover + .checkbox-label::before {
+  cursor: pointer;
+}
+
+.checkbox-link {
+  color: var(--accent-color);
 }
 
 .modal-btn {
